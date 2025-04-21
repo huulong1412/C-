@@ -5,32 +5,6 @@
 
 #include<stdio.h>
 #include<conio.h>
-#include<math.h>
-
-/*
-  Tính T(x, n) = 𝑥^n
-  Sử dụng hàm pow() trong thư viện math.h
-*/
-double Power(double x, long n)
-{
-    return pow(x, n);
-}
-
-int main()
-{
-    double x = 3;
-    long n = 2;
-    double z;
-    z = Power(x, n);
-    printf("z = %f", z);
-
-    getch();
-    return 0;
-}
-
-
-/* #include<stdio.h>
-#include<conio.h>
 
 
 double Power_n(double x, long n)
@@ -68,4 +42,4 @@ int main()
 
     getch();
     return 0;
-} */
+}
