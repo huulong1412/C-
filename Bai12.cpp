@@ -1,6 +1,5 @@
 /*
-  Tính T(x, n) = 𝑥^n
-
+  Tính T(x, n) = x+ x^2 + x^3 + x^4 + ... + x^n
 */
 
 #include<stdio.h>
