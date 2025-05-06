@@ -1,6 +1,7 @@
 /* 
-Tính S(n) = 1 + x^2/2! + x^4/4! + ... + x^(2n)/(2n)!
-*/
+Tính S(n) = 1 + x + x^3/3! + x^5/5! + ... + x^(2n+1)/(2n+1)! 
+ */
+
 
 #include<stdio.h>
 #include<conio.h>
@@ -14,14 +15,14 @@ int main()
     scanf("%f", &x);
     do
     {
-    printf("\nNhap n(n >= 0) : ");
+    printf("\nNhap n(n >= 1) : ");
     scanf("%d", &n);
-      if(n < 0)
+      if(n < 1)
       {
-          printf("\n N phai >= 0. Xin nhap lai !");
+          printf("\n N phai >= 1. Xin nhap lai !");
       }
 
-    }while(n < 0);
+    }while(n < 1);
 
     S = 1;
     N = 1;
@@ -29,10 +30,10 @@ int main()
 
     while(i <= n)
     {
-        T = pow(x, (2 * i ));
-        M = i * 2;
+        T = pow(x, (2 * i + 1));
+        M = i * 2 + 1;
         N = N * M * (M - 1);
-        S = S + T/N;
+        S = S + x + T/N;
         i++;
     }
     printf("\nTong la %f", S);
