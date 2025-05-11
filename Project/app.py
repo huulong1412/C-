@@ -175,12 +175,27 @@ def refresh_table():
 import random  # thêm ở đầu file
 
 def on_submit():
-    # Mở ngẫu nhiên 1 trong 2 tủ (nhưng không mở đồng thời)
-    if random.choice([True, False]):
-        open_drawer_A()
-    else:
-        open_drawer_B()
+    # Kiểm tra trạng thái công tắc hành trình
+    dang_mo_A = lgpio.gpio_read(h, LIMIT_SWITCH_PIN) == 0  # tủ trên chưa nhấn => đang mở
+    dang_mo_B = lgpio.gpio_read(h, LIMIT_SWITCH_PIN_B) == 0  # tủ dưới chưa nhấn => đang mở
 
+    def mo_tu_con_lai():
+        if random.choice([True, False]):
+            open_drawer_A()
+        else:
+            open_drawer_B()
+
+    # Nếu một trong hai tủ đang mở, đóng nó rồi mới mở tủ còn lại
+    if dang_mo_A:
+        close_drawer_A()
+        threading.Timer(3, open_drawer_B).start()  # chờ 3 giây rồi mở tủ dưới
+    elif dang_mo_B:
+        close_drawer_B()
+        threading.Timer(3, open_drawer_A).start()  # chờ 3 giây rồi mở tủ trên
+    else:
+        mo_tu_con_lai()  # không tủ nào mở => mở ngẫu nhiên
+
+    # Xử lý nhập liệu
     ma_hd = entry_ma_hd.get().strip()
     so_tien_str = entry_so_tien.get().strip().replace(".", "")
 
@@ -190,9 +205,12 @@ def on_submit():
 
     ghi_chu = entry_ghi_chu.get().strip()
     insert_data(ma_hd, int(so_tien_str), ghi_chu)
+
+    # Xóa trường nhập sau khi lưu
     entry_ma_hd.delete(0, tk.END)
     entry_so_tien.delete(0, tk.END)
     entry_ghi_chu.delete(0, tk.END)
+
 
 def export_and_reset():
     conn = sqlite3.connect(DB_NAME)
