@@ -2,12 +2,13 @@
   Cho số nguyên dương n. Kiểm tra số nguyên dương n có phải là số
 chính phương hay không?
 Số chính phương là số mà kết quả khai căn bậc 2 là 1 số nguyên*/
+
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
 int main()
 {
-    int i, n;
+    int n;
     do
     {
     printf("\nNhap n: ");
