@@ -1,5 +1,5 @@
 /*
-Bai 36: Tinh S = sqrt(n-1! + sqrt(n-2! + sqrt(n-3! + ... + sqrt(1!))))
+ Tính S = sqrt(n-1! + sqrt(n-2! + sqrt(n-3! + ... + sqrt(1!))))
 */
 
 #include<stdio.h>

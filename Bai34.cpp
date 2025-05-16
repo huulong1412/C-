@@ -1,5 +1,5 @@
 /*
-  Tính S(n) = √𝑛 + √𝑛 − 1 + √𝑛 − 2 + ⋯ √2 + √1 có n dấu căn.
+  Tính S(n) = sqrt(n + sqrt(n-1 + sqrt(n-2 + ... + sqrt(1))))
 */
 
 #include<stdio.h>
