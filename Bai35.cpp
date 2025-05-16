@@ -1,5 +1,5 @@
 /*
-Bai 36: Tinh S = sqrt(n-1! + sqrt(n-2! + sqrt(n-3! + ... + sqrt(1!))))
+    Tính S(n) = sqrt(1 + sqrt(2 + sqrt(3 + ... + sqrt(n-1 + sqrt(n))))
 */
 
 #include<stdio.h>
@@ -8,7 +8,8 @@ Bai 36: Tinh S = sqrt(n-1! + sqrt(n-2! + sqrt(n-3! + ... + sqrt(1!))))
 int main()
 {
     int i, n;
-    float S, M;
+    float S;
+
     do
     {
         printf("\nNhap n(n >= 1): ");
@@ -19,17 +20,16 @@ int main()
             printf("\nn phai >= 1. Xin nhap lai !");
         }
     }while(n < 1);
-    i = 1;
-    M = 1;
-    S = sqrt((float)0);
 
-    while(i <= n)
+    i = n;
+    S = 0;
+
+    while(i >= 1)
     {
-        M = M * i;
-        S = sqrt(M + S);
-        i++;
+        S = sqrt(i + S);
+        i--;
     }
-    printf("\nTong la %f", S);
+    printf("\nTong S = %f", S);
 
     getch();
     return 0;
