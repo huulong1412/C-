@@ -1,5 +1,5 @@
 /*
-  Cho số nguyên dương n. Hãy tìm chữ số đầu tiên của n
+  Hãy tìm chữ số đảo ngược của số nguyên dương n
 */
 
 #include<stdio.h>
@@ -7,21 +7,18 @@
 
 int main()
 {
-    int themang, n, i;
-
+    int n;
     do
     {
         printf("\nNhap n: ");
         scanf("%d", &n);
     }while(n < 0 && printf("\nLoi: (n >= 0)"));
 
-    themang = n;
+    printf("\nSo dao nguoc cua %d la: ", n);
     do
     {
-      i = themang % 10;
-    }while(themang /= 10);
-    
-    printf("\nChu so dau tien la %d", i);
+        printf("%d", n % 10);
+    }while(n /= 10); // n = n / 10; n != 0;
 
 
     getch();
