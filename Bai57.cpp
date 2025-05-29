@@ -1,6 +1,5 @@
 /*
-  Sưu tầm bởi @nguyenvanhieuvn
-  Thực hành nhiều bài tập hơn tại https://luyencode.net/
+  Hãy kiểm tra số nguyên dương n có toàn chữ số chẵn hay không
 */
 
 #include<stdio.h>
