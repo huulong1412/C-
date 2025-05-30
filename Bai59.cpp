@@ -74,11 +74,11 @@ int main()
     }*/
     if(SoNghichDao == n)
     {
-        printf("Dung !");
+        printf("Dung");
     }
     else
     {
-        printf("Sai !");
+        printf("Khong");
     }
 
     getch();

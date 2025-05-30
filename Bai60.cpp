@@ -1,6 +1,5 @@
 /*
-  Sưu tầm bởi @nguyenvanhieuvn
-  Thực hành nhiều bài tập hơn tại https://luyencode.net/
+  Hãy kiểm tra các chữ số của số nguyên dương n có tăng dần từ trái sang phải hay không
 */
 
 #include<stdio.h>
