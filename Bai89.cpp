@@ -5,7 +5,7 @@
 
 int main()
 {
-    /*int S, i, n;
+    int S, i, n;
     printf("\nNhap n: ");
     scanf("%d", &n);
 
@@ -13,9 +13,9 @@ int main()
     {
         S = S + i;
     }
-    printf("\nTong = %d", S);*/
+    printf("\nTong = %d", S);
 
-    int S, i, n;
+    /* int S, i, n;
     S = 0;
     i = 1;
     printf("\nNhap n: ");
@@ -27,7 +27,7 @@ int main()
         if(i >= n)
             break;
     }
-    printf("\nTong = %d", S);
+    printf("\nTong = %d", S); */
     getch();
     return 0;
 }			
