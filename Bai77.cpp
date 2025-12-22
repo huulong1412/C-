@@ -7,7 +7,7 @@ int main()
 {
     int i, n;
     long s;
-    printf("\Nhap n: ");
+    printf("\nNhap n: ");
     scanf("\n%d", &n);
 
     s = 0;
